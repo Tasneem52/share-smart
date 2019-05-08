@@ -1,0 +1,11 @@
+<h1> Welcome to ShareSmart </h1>
+
+<ul>
+  <% @groups.each do |group| %>
+  <li>
+    <%= link_to group.name, group_path(group) %>
+  </li>
+  <%end%>
+</ul>
+
+<%= link_to "Add New Group", new_group_path %>
