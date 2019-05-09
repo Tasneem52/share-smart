@@ -1,0 +1,18 @@
+<h2> Group Show Page for <%= @group.name%> </h2>
+<p>
+  <% if @group.description %>
+    Description: <%= @group.description %>
+  <%end%>
+</p>
+
+<p>
+  <% if @group.icon %>
+    Icon: <%= @group.icon %>
+  <%end%>
+</p>
+
+<p>
+  <% if @members %>
+    Members: <%= @members %>
+  <%end%>
+</p>

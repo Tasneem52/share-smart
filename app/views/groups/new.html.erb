@@ -1,0 +1,19 @@
+<h2> New Group Form Page </h2>
+
+<%= form_for @group do |f| %>
+
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+  <br /><br/ >
+
+  <%= f.label :icon, "Icon" %>
+  <%= f.file_field :icon %>
+  <br/ ><br/ >
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %>
+  <br /><br />
+
+  <%= f.submit "Add Group" %>
+
+<%end%>

@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Group.delete_all
+
+Group.create!(name: "Launch Academy 24", description: "Mainly use this for sharing books about programming languages.", icon: "Still need one")
