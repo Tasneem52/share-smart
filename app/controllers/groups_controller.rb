@@ -4,12 +4,13 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.joins(:users).where(users: {id: current_user})
-    user = current_user
+    @user = User.where(id: current_user)
   end
 
   def show
     @group = Group.find(params[:id])
     @members = Membership.where(group_id: @group.id)
+    @products = @group.products
   end
 
   def new
@@ -20,6 +21,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.users = User.where(id: current_user)
 
+    # Temporarily hardcoding the invitation for now.
     members=["abc@gmail.com", "hey@hey.com", "foo@foo.com"]
 
     if @group.save

@@ -5,4 +5,5 @@ class Group < ApplicationRecord
   has_many :users, through: :memberships
 
   has_many :invitations
+  has_many :products
 end

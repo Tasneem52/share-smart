@@ -1,4 +1,4 @@
-<h1> Welcome to ShareSmart </h1>
+<h2> Welcome User, here is then list of your groups </h2>
 
 <ul>
   <% @groups.each do |group| %>
@@ -8,4 +8,6 @@
   <%end%>
 </ul>
 
-<%= link_to "Add New Group", new_group_path %>
+<div class="tab">
+  <%= link_to "Add New Group", new_group_path %>
+</div>
