@@ -1,13 +1,2 @@
-<h2> Welcome User, here is then list of your groups </h2>
-
-<ul>
-  <% @groups.each do |group| %>
-  <li>
-    <%= link_to group.name, group_path(group) %>
-  </li>
-  <%end%>
-</ul>
-
-<div class="tab">
-  <%= link_to "Add New Group", new_group_path %>
+<div id="app">
 </div>
