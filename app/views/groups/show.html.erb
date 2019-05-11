@@ -11,8 +11,16 @@
   <%end%>
 </p>
 
-<p>
-  <% if @members %>
-    Members: <%= @members %>
+<h3> Available Products </h3>
+
+<ul>
+  <% @products.each do |product| %>
+  <li>
+    <%= link_to product.name, group_product_path(@group, product) %>
+  </li>
   <%end%>
+</ul>
+
+<p>
+<%= link_to "Add New Product", new_group_product_path(@group) %>
 </p>
