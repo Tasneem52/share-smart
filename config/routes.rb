@@ -5,4 +5,11 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :show] do
     resources :products, only: [:new, :show, :create]
   end
+
+  namespace:api do
+    namespace:v1 do
+      resources:groups,only:[:index]
+      #resources:products,only:[:create,:update]
+    end
+  end
 end
