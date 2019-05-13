@@ -15,3 +15,7 @@
  *= require foundation_and_overrides
 
  */
+.pp_photo {
+  width: 2em;
+  margin: 5px;
+}

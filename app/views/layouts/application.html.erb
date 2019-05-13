@@ -22,6 +22,9 @@
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
+        <% if current_user[:profile_photo] %>
+         <li class="pp_photo"><%= image_tag("#{current_user.profile_photo}") %></li>
+       <% end %>
         <li><%= link_to 'Welcome ' + current_user.name, '#' %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
