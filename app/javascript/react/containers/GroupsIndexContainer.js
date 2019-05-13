@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import GroupInfo from '../components/GroupInfo'
 import ProductsContainer from './ProductsContainer'
@@ -65,6 +66,7 @@ class GroupsIndexContainer extends Component {
        <div className="left-nav">
          <div>Groups:</div>
          <ul>{groups}</ul>
+         <button>Create new group</button>
        </div>
        <div className="divider" />
        <ProductsContainer group={this.state.selectedGroup}/>
