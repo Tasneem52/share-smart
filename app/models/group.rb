@@ -6,4 +6,6 @@ class Group < ApplicationRecord
 
   has_many :invitations
   has_many :products
+
+  mount_uploader :icon, GroupIconUploader
 end

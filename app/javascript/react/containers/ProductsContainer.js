@@ -28,7 +28,9 @@ class ProductsContainer extends Component {
 
     return (
       <div>
+      <img className="group-icon" src={group.icon.url} />
       <h2>{group.name}</h2>
+
       <div>{group.description}</div>
 
       <ProductPortal products={group.products} />
