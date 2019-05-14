@@ -37,3 +37,12 @@
 .group-name-link {
   list-style: none;
 }
+
+.group-name-btn:focus {
+  outline:none;
+}
+
+.group-name-btn:hover {
+  //background:none;
+  //opacity:0;
+}

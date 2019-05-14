@@ -1,14 +1,15 @@
 import React, { Component }  from 'react';
 import { Link } from 'react-router';
+import ProductContent from './ProductContent';
 
 class ProductShow extends Component {
 
   constructor(props){
     super(props);
-   this.state = {
-     product: {},
-   }
- }
+    this.state = {
+      product: {},
+    }
+  }
 
   componentDidMount() {
     fetch(`/api/v1/products/${this.props.params.id}`)
@@ -26,7 +27,7 @@ class ProductShow extends Component {
         this.setState({ product: body.product });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+    }
 
   handleImage() {
     if (Object.keys(this.state.product).length === 0) {
@@ -43,13 +44,16 @@ class ProductShow extends Component {
     console.log('In render:: ProductShow');
     console.log(this.state.product);
 
+    let product = this.state.product;
+
     return (
       <div className="product-show">
-        {this.handleImage()}
-        <button>Im interested</button>
+        <div className="product-show-tile">
+          {this.handleImage()}
+          <ProductContent product={product} />
+        </div>
       </div>
     );
   }
 }
-
 export default ProductShow;
