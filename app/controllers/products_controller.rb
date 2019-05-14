@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash[:notice] = "Product added successfully!"
-      redirect_to @product.group
+      redirect_to @product
     else
       flash[:error] = @product.errors.full_messages.to_sentence
       render :new

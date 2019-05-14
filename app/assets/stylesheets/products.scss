@@ -1,0 +1,31 @@
+.product-portal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-tile {
+  width: 15em;
+  height: 18em;
+  margin: 2em;
+  box-shadow: 5px 2px 25px lightgrey;
+}
+
+.product-btn {
+  height: 15em;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.product-name {
+  color: black;
+  padding: 1em;
+  border-top: 1px solid lightgrey;
+}
+
+.product-show {
+}
+
+.product-show-img {
+}
