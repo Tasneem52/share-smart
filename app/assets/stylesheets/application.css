@@ -27,8 +27,12 @@
   flex-direction: column;
 }
 
-.new_group {
+.new_group, .new_product {
   width: 50rem;
+}
+
+.new_user {
+  width: 40rem;
 }
 
 input[type=submit] {
