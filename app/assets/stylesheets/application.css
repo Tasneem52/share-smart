@@ -20,6 +20,42 @@
   margin: 5px;
 }
 
+.form-center {
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.new_group {
+  width: 50rem;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 2rem 1.0625rem 2rem;
+  font-size: 1rem;
+  background-color: #008CBA;
+  border-color: #007095;
+  color: #FFFFFF;
+  transition: background-color 300ms ease-out;
+}
+
+textarea {
+  height: 5em;
+}
+
+.align-center {
+  text-align: center
+}
+
 
 /*form {
   margin: 0 auto;

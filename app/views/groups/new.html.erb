@@ -1,17 +1,23 @@
-<h2> New Group Form Page </h2>
+<div class="form-page">
+  <div class="form-center">
+    <h2> Create new Group </h2>
 
-<%= form_for @group do |f| %>
+    <%= form_for @group do |f| %>
 
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name %>
 
-  <%= f.label :icon, "Icon" %>
-  <%= f.file_field :icon %>
-  <br/ >
+      <%= f.label :icon, "Icon" %>
+      <%= f.file_field :icon %>
+      <br/ >
 
-  <%= f.label :description, "Description" %>
-  <%= f.text_field :description %>
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description %>
 
-  <%= f.submit "Add Group" %>
-
-<%end%>
+      <%= f.label :memberships, "Member invitation (comma separated emails)" %>
+      <%= f.text_area :memberships, :value => "" %>
+      <br/ >
+      <div class="align-center"><%= f.submit "Add Group" %></div>
+    <%end%>
+  </div>
+</div>
