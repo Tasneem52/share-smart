@@ -3,14 +3,12 @@ import { Link } from 'react-router';
 
 import BackButton from './BackButton'
 
-
 const ProductContent= (props) => {
 
  console.log(props.product);
 
  let userName = props.product.user ? props.product.user.name: ''
  let email = props.product.user ? props.product.user.email: ''
-
 
  return (
     <div className="product-show-content">

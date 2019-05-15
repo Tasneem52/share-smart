@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Link } from 'react-router';
 import ProductContent from './ProductContent';
+import GoogleMapTile from './GoogleMapTile';
 
 class ProductShow extends Component {
 
@@ -52,6 +53,7 @@ class ProductShow extends Component {
           {this.handleImage()}
           <ProductContent product={product} />
         </div>
+        <GoogleMapTile />
       </div>
     );
   }
