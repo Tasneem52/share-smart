@@ -20,18 +20,15 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.users = User.where(id: current_user)
-
-    # Temporarily hardcoding the invitation for now.
-    members=["abc@gmail.com", "hey@hey.com", "foo@foo.com"]
+    members = params["group"]["memberships"].split(",")
 
     if @group.save
       Membership.where(group_id: @group.id).update_all(role: "admin")
       members.each do |member|
-        Invitation.create!(email: member, group_id: @group.id, status: "invited")
+        Invitation.create!(email: member.strip, group_id: @group.id, status: "invited")
       end
-      Membership.where(user_id: 4).update_all(user_id: "7")
       flash[:notice] = "Group added successfully!"
-      redirect_to @group
+      redirect_to '/'
     else
       flash[:error] = @group.errors.full_message.to_sentence
       render action: 'new'
@@ -47,9 +44,9 @@ class GroupsController < ApplicationController
   protected
 
   def authorize_user
-   if !user_signed_in? || !current_user
-     flash[:notice] = "You need to be sign in."
-     redirect_to '/users/sign_in'
-   end
- end
+    if !user_signed_in? || !current_user
+      flash[:notice] = "You need to be sign in."
+      redirect_to '/users/sign_in'
+    end
+  end
 end
