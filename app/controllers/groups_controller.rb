@@ -27,7 +27,6 @@ class GroupsController < ApplicationController
       members.each do |member|
         Invitation.create!(email: member.strip, group_id: @group.id, status: "invited")
       end
-      Membership.where(user_id: 4).update_all(user_id: "7")
       flash[:notice] = "Group added successfully!"
       redirect_to '/'
     else
