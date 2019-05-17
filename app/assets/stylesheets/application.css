@@ -15,10 +15,28 @@
  *= require foundation_and_overrides
 
  */
-.pp_photo {
-  width: 2em;
-  margin: 5px;
-}
+ .top-bar-section ul li,
+ .top-bar-section ul li a  {
+  background: none !important;
+  font-size: 24px !important;
+ }
+
+ .top-bar {
+  background-image:
+    linear-gradient(
+      #1ea7e2, #00008b
+    );
+  height: 3em;
+ }
+
+ .logo {
+  font-size: 24px !important;
+ }
+
+ .pp_photo {
+    width: 40px;
+    padding: 3px;
+ }
 
 .form-center {
   padding: 2rem;
