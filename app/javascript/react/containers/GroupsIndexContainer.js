@@ -67,9 +67,10 @@ class GroupsIndexContainer extends Component {
     return (
       <div className="groups">
         <div className="left-nav">
-          <div>Groups:</div>
-          <ul>{groups}</ul>
-          <Link to={`/groups/new`}>
+          <h3>Groups</h3>
+          <div className="group-divider" />
+          <ul className="left-nav-ul">{groups}</ul>
+          <Link className="create-group-btn" to={`/groups/new`}>
             <button onClick={this.handleStuff}>Create new group</button>
           </Link>
         </div>

@@ -19,7 +19,7 @@ const ProductContent= (props) => {
       <p>Posted by: {userName} ({email})</p>
       <div className="product-show-btn">
         <button className="interested-btn">I am interested</button>
-        <BackButton text='Back to products' />
+        <BackButton text='Back to groups' />
       </div>
     </div>
   );

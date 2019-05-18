@@ -3,51 +3,82 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .groups {
-  width: 100%;
-  height: 1000px;
-  display: flex;
+ width: 100%;
+ height: 1000px;
+ display: flex;
 }
 
 .left-nav {
-  font-size: 20px;
-  background: blanchedalmond;
-  padding: 10px;
+ font-size: 20px;
+ background: #c0c0c0;
+ text-align: center;
+ //padding: 10px;
+}
+
+.left-nav-ul {
+ margin-left: 0;
 }
 
 .divider {
-  width: 1px;
-  height: 100%;
-  background: grey;
+ width: 1px;
+ height: 100%;
+ background: grey;
 }
 
 .group {
-  flex: 1;
-  padding: 2em;
-  text-align: center;
+ flex: 1;
+ padding: 2em;
+ text-align: center;
+ background: url(https://lh3.googleusercontent.com/--moI5LNPyLI/XN5KmaR7v3I/AAAAAAABcug/x_HOOqwc_yscRUdrxEEX0jJOxXrkuMSwwCK8BGAs/s0/2019-05-16.png) no-repeat;
+ background-size: cover;
 }
 
-.group-icon {
-  width: 6em;
-  height: 5em;
-  border-radius: 1em;
-  border: 1px solid black;
+.group-divider {
+ width: 100%;
+ height: 1px;
+ background: darkblue;
 }
+
 .group-name-btn {
-  background: none;
-  color: darkblue;
-  padding: 10px;
-  margin: 0;
+ background: none;
+ color: darkblue;
+ padding: 10px;
+ margin: 0;
+ width: 100%;
+ transition: none;
 }
 
-.group-name-link {
-  list-style: none;
+.app-title {
+ font-size: 3em;
+}
+
+.group-description {
+ font-size: 18px;
 }
 
 .group-name-btn:focus {
-  outline:none;
+ outline: none;
+ background: #0461A5;
+ color: white;
 }
 
 .group-name-btn:hover {
-  //background:none;
-  //opacity:0;
+ background: #0461A5;
+ color: white;
+}
+
+.group-name-link {
+ list-style: none;
+}
+
+.create-group-btn {
+ margin: 2em;
+}
+
+.group-icon {
+width: 6em;
+height: 5em;
+border-radius: 1em;
+border: 1px solid black;
+overflow: hidden;
 }

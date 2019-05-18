@@ -43,8 +43,6 @@ class ProductShow extends Component {
 
   render() {
     console.log('In render:: ProductShow');
-    console.log(this.state.product);
-
     let product = this.state.product;
 
     return (
