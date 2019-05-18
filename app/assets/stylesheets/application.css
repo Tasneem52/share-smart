@@ -15,10 +15,21 @@
  *= require foundation_and_overrides
 
  */
+ button {
+  font-size: 18px;
+  border-radius: 5px;
+  background: #0461A5;
+ }
+
+ button:focus, button:hover {
+  background-color: #0C8AC1;
+  outline: none;
+ }
+
  .top-bar-section ul li,
  .top-bar-section ul li a  {
   background: none !important;
-  font-size: 24px !important;
+  font-size: 20px !important;
  }
 
  .top-bar {
@@ -30,30 +41,41 @@
  }
 
  .logo {
-  font-size: 24px !important;
+  font-size: 20px !important;
  }
 
  .pp_photo {
-    width: 40px;
+    width: 2em;
     padding: 3px;
  }
 
-.form-center {
+ .form-page {
+  background: url(https://lh3.googleusercontent.com/--moI5LNPyLI/XN5KmaR7v3I/AAAAAAABcug/x_HOOqwc_yscRUdrxEEX0jJOxXrkuMSwwCK8BGAs/s0/2019-05-16.png) no-repeat;
+  background-size: cover;
+  height: 1000px;
+ }
+
+ .form-center {
   padding: 2rem;
   align-items: center;
   display: flex;
   flex-direction: column;
-}
+  width: 100%;
+ }
 
-.new_group, .new_product {
+ .new_group, .new_product {
   width: 50rem;
-}
+ }
 
-.new_user {
+ .new_user {
   width: 40rem;
-}
+ }
 
-input[type=submit] {
+ label {
+  font-size: 1.25rem;
+ }
+
+ input[type=submit] {
   cursor: pointer;
   font-weight: normal;
   line-height: normal;
@@ -63,42 +85,18 @@ input[type=submit] {
   text-decoration: none;
   display: inline-block;
   padding: 1rem 2rem 1.0625rem 2rem;
-  font-size: 1rem;
-  background-color: #008CBA;
-  border-color: #007095;
+  font-size: 18px;
+  background-color: #0461A5;
+  border-radius: 5px;
+
   color: #FFFFFF;
   transition: background-color 300ms ease-out;
-}
+ }
 
-textarea {
+ textarea {
   height: 5em;
-}
+ }
 
-.align-center {
+ .align-center {
   text-align: center
-}
-
-.form-page {
-  background: url(https://lh3.googleusercontent.com/--moI5LNPyLI/XN5KmaR7v3I/AAAAAAABcug/x_HOOqwc_yscRUdrxEEX0jJOxXrkuMSwwCK8BGAs/s0/2019-05-16.png) no-repeat;
-  background-size: cover;
-}
-
-/*form {
-  margin: 0 auto;
-  width: 50%;
-}
-
-h1, h2, h3, a {
-  text-align: center;
-}
-
-body {
-}
-
-ul, p {
-  padding-left: 3em;
-}
-
-.tab {
-  padding-left: 3em
-}*/
+ }
