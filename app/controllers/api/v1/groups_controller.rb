@@ -13,10 +13,10 @@ class Api::V1::GroupsController < ApplicationController
   end
 
   def destroy
-   group = Group.find(params[:id])
-   Group.where(id: group.id).update_all(status: "deleted")
-   flash[:notice] = "Group deleted successfully!"
-   render json: group
- end
+    group = Group.find(params[:id])
+    Group.where(id: group.id).update_all(status: "deleted")
+    flash[:notice] = "Group deleted successfully!"
+    render json: group
+  end
 
 end

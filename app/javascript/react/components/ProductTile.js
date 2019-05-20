@@ -5,7 +5,7 @@ const ProductTile= (props) => {
 
   let imgUrl = props.image.url
   if (!imgUrl) {
-    imgUrl = 'https://lh3.googleusercontent.com/-H2U3kQntnSA/XNkGpU93eaI/AAAAAAAARxg/1dX0xDP4Qa0uwOn8UzPbNfltcJAYIkqZgCK8BGAs/s0/2019-05-12.png';
+    imgUrl = 'https://s3.amazonaws.com/sharesmart-production/uploads/image-unavailable.jpeg';
   }
 
   return (

@@ -20,7 +20,6 @@ class ProductsContainer extends Component {
     })
     .then(response => response.json())
     .catch(error => console.error(`Error in deletion: ${error.message}`))
-
     this.refreshPage();
   }
 
@@ -48,7 +47,7 @@ class ProductsContainer extends Component {
 
     let imageUrl = group.icon.url;
     if (!imageUrl) {
-      imageUrl = 'https://lh3.googleusercontent.com/-H2U3kQntnSA/XNkGpU93eaI/AAAAAAAARxg/1dX0xDP4Qa0uwOn8UzPbNfltcJAYIkqZgCK8BGAs/s0/2019-05-12.png'
+      imageUrl = 'https://s3.amazonaws.com/sharesmart-production/uploads/image-unavailable.jpeg'
     }
 
     let handleGroupDelete = () => {
