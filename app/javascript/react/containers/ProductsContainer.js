@@ -13,6 +13,19 @@ class ProductsContainer extends Component {
     }
   }
 
+
+  deleteGroup = (groupId) => {
+    fetch(`/api/v1/groups/${groupId}`, {
+      credentials: 'same-origin',
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .catch(error => console.error(`Error in deletion: ${error.message}`))
+
+    this.refreshPage();
+  }
+
+
   handleGroupShowPage = () => {
     const group = this.props.group;
     console.log(group)
@@ -30,6 +43,11 @@ class ProductsContainer extends Component {
     if (!imageUrl) {
       imageUrl = 'https://lh3.googleusercontent.com/-H2U3kQntnSA/XNkGpU93eaI/AAAAAAAARxg/1dX0xDP4Qa0uwOn8UzPbNfltcJAYIkqZgCK8BGAs/s0/2019-05-12.png'
     }
+
+    let handleGroupDelete = () => {
+      return this.deleteGroup(group.id);
+    }
+
     return (
       <div>
         <img className="group-icon" src={group.icon.url} />
@@ -37,13 +55,17 @@ class ProductsContainer extends Component {
         <div className="group-description">{group.description}</div>
         <ProductPortal products={group.products} />
         <Link to={`groups/${group.id}/products/new`}>
-          <button onClick={this.handleStuff}>Add product</button>
+          <button className="add-product-btn" onClick={this.refreshPage}>Add product</button>
         </Link>
+        <Link to={`/groups`}>
+          <button onClick={handleGroupDelete}>Delete group</button>
+        </Link>
+
       </div>
     );
   };
 
-  handleStuff() {
+  refreshPage() {
     window.location.reload();
   }
 

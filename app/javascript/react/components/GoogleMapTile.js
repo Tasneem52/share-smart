@@ -8,20 +8,8 @@ class GoogleMapTile extends Component {
   }
 
   componentDidMount(){
-    let map;
-    //let lat = this.props.coordinates.lat
-    //let lng = this.props.coordinates.lng
-    //let zoom = this.props.zoom
     window.initMap = this.initMap;
-
-    // let initMap = () => {
-    //   map = new google.maps.Map(this.refs.map.getDOMNode(), {
-    //   //map = new google.maps.Map(document.getElementById('map'), {
-    //     center: {lat: -25.344, lng: 131.036},
-    //     zoom: 4
-    //   })
-    // }
-    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyBokUW-FxetnpYO0wGKnh9ElP_r4t3SjxQ&callback=initMap')
+    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyAFkHmyAunNglCQrs-NVgsENeu7klfgB_I&callback=initMap')
   }
 
   initMap = () => {
