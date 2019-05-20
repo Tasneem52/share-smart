@@ -15,6 +15,13 @@
  *= require foundation_and_overrides
 
  */
+
+.flash-notice {
+  font-size: 20px;
+  text-align: center;
+  background: mediumseagreen;
+}
+
  button {
   font-size: 18px;
   border-radius: 5px;
@@ -45,8 +52,8 @@
  }
 
  .pp_photo {
-    width: 2em;
-    padding: 3px;
+  width: 2em;
+  padding: 3px;
  }
 
  .form-page {
