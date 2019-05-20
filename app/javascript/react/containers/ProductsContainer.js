@@ -77,9 +77,6 @@ class ProductsContainer extends Component {
   }
 
   render() {
-    console.log('In Product render::');
-    console.log(this.props);
-
     const group = this.props.group;
 
     return (

@@ -41,9 +41,23 @@ class ProductShow extends Component {
     return (<img className="product-show-img" src={imageUrl} />)
   }
 
+  handleMaps = () => {
+    if (Object.keys(this.state.product).length === 0) {
+      return null;
+    }
+    return (
+      <GoogleMapTile
+        lat={this.state.product.user.latitude}
+        lng={this.state.product.user.longitude}
+      />
+    );
+  }
+
   render() {
     console.log('In render:: ProductShow');
     let product = this.state.product;
+
+
 
     return (
       <div className="product-show">
@@ -51,7 +65,7 @@ class ProductShow extends Component {
           {this.handleImage()}
           <ProductContent product={product} />
         </div>
-        <GoogleMapTile />
+        {this.handleMaps()}
       </div>
     );
   }
