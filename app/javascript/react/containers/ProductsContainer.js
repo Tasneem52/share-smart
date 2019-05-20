@@ -13,7 +13,6 @@ class ProductsContainer extends Component {
     }
   }
 
-
   deleteGroup = (groupId) => {
     fetch(`/api/v1/groups/${groupId}`, {
       credentials: 'same-origin',
@@ -25,12 +24,20 @@ class ProductsContainer extends Component {
     this.refreshPage();
   }
 
-
   handleGroupShowPage = () => {
     const group = this.props.group;
-    console.log(group)
     if (!group) {
-      return <h2 className="app-title">ShareSmart</h2>
+      return (
+        <div>
+          <h2 className="app-title">Welcome to ShareSmart</h2>
+          <div className="app-description">
+            <p>
+             ShareSmart enables users to create groups and invite members to join the groups.
+            </p>
+            <p>You can share products and express interests in a group.</p>
+          </div>
+        </div>
+      );
     };
 
     const members = group.invitations.map(invitee => {
