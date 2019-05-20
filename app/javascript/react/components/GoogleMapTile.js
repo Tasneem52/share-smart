@@ -14,11 +14,14 @@ class GoogleMapTile extends Component {
 
   initMap = () => {
     let map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 42.361145, lng: -71.057083},
+      center: {lat: this.props.lat, lng: this.props.lng},
       zoom: 14
     });
 
-    let marker = new google.maps.Marker({position: {lat: 42.361145, lng: -71.057083}, map: map});
+    let marker = new google.maps.Marker(
+      {position: {lat: this.props.lat, lng: this.props.lng},
+      map: map}
+    );
   }
 
   render() {

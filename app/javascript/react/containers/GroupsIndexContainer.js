@@ -46,8 +46,6 @@ class GroupsIndexContainer extends Component {
   }
 
   render() {
-    console.log('In render:: GroupsIndexContainer');
-
     let groups = this.state.groups.map(group => {
       console.log(group.id);
 

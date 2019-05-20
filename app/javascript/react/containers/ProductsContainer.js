@@ -13,7 +13,6 @@ class ProductsContainer extends Component {
     }
   }
 
-
   deleteGroup = (groupId) => {
     fetch(`/api/v1/groups/${groupId}`, {
       credentials: 'same-origin',
@@ -21,16 +20,23 @@ class ProductsContainer extends Component {
     })
     .then(response => response.json())
     .catch(error => console.error(`Error in deletion: ${error.message}`))
-
     this.refreshPage();
   }
 
-
   handleGroupShowPage = () => {
     const group = this.props.group;
-    console.log(group)
     if (!group) {
-      return <h2 className="app-title">ShareSmart</h2>
+      return (
+        <div>
+          <h2 className="app-title">Welcome to ShareSmart</h2>
+          <div className="app-description">
+            <p>
+             ShareSmart enables users to create groups and invite members to join the groups.
+            </p>
+            <p>You can share products and express interests in a group.</p>
+          </div>
+        </div>
+      );
     };
 
     const members = group.invitations.map(invitee => {
@@ -41,7 +47,7 @@ class ProductsContainer extends Component {
 
     let imageUrl = group.icon.url;
     if (!imageUrl) {
-      imageUrl = 'https://lh3.googleusercontent.com/-H2U3kQntnSA/XNkGpU93eaI/AAAAAAAARxg/1dX0xDP4Qa0uwOn8UzPbNfltcJAYIkqZgCK8BGAs/s0/2019-05-12.png'
+      imageUrl = 'https://s3.amazonaws.com/sharesmart-production/uploads/image-unavailable.jpeg'
     }
 
     let handleGroupDelete = () => {
@@ -70,9 +76,6 @@ class ProductsContainer extends Component {
   }
 
   render() {
-    console.log('In Product render::');
-    console.log(this.props);
-
     const group = this.props.group;
 
     return (

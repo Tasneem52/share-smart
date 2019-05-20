@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  validates :location, presence: true
 
   has_many :memberships
   has_many :groups, through: :memberships

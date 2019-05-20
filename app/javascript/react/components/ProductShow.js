@@ -34,16 +34,30 @@ class ProductShow extends Component {
     if (Object.keys(this.state.product).length === 0) {
       return null;
     }
-    let imageUrl = 'https://lh3.googleusercontent.com/-H2U3kQntnSA/XNkGpU93eaI/AAAAAAAARxg/1dX0xDP4Qa0uwOn8UzPbNfltcJAYIkqZgCK8BGAs/s0/2019-05-12.png';
+    let imageUrl = 'https://s3.amazonaws.com/sharesmart-production/uploads/image-unavailable.jpeg';
     if (this.state.product.image.url) {
       imageUrl = this.state.product.image.url;
     }
     return (<img className="product-show-img" src={imageUrl} />)
   }
 
+  handleMaps = () => {
+    if (Object.keys(this.state.product).length === 0) {
+      return null;
+    }
+    return (
+      <GoogleMapTile
+        lat={this.state.product.user.latitude}
+        lng={this.state.product.user.longitude}
+      />
+    );
+  }
+
   render() {
     console.log('In render:: ProductShow');
     let product = this.state.product;
+
+
 
     return (
       <div className="product-show">
@@ -51,7 +65,7 @@ class ProductShow extends Component {
           {this.handleImage()}
           <ProductContent product={product} />
         </div>
-        <GoogleMapTile />
+        {this.handleMaps()}
       </div>
     );
   }
